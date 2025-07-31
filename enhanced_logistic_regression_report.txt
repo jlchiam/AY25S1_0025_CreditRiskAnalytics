@@ -1,3 +1,60 @@
 ENHANCED CORPORATE RATING ANALYSIS - LOGISTIC REGRESSION REPORT
 ======================================================================
 
+DATASET INFORMATION:
+  • Original dataset shape: (2029, 31)
+  • Enhanced dataset shape: (2029, 31)
+  • Duplicates removed: 0
+  • Missing values handled: 0  0
+  • Outliers detected: 1075 (53.0%)
+  • Features after selection: 15
+  • Target classes: 10
+  • Class distribution: {'A': 398, 'AA': 89, 'AAA': 7, 'B': 302, 'BB': 490, 'BBB': 671, 'C': 0, 'CC': 0, 'CCC': 64}
+
+ MODEL INFORMATION:
+  • Algorithm: Logistic Regression (Enhanced)
+  • Best parameters: {'C': 1000, 'class_weight': 'balanced', 'max_iter': 1000, 'penalty': 'l2', 'solver': 'lbfgs'}
+  • Cross-validation score: 0.3753 ± 0.0143
+  • Test accuracy: 0.3649
+  • Risk-level accuracy: 0.6266
+  • Average confidence: 0.3726
+  • ROC-AUC score: 0.7540
+  • Training samples: 3757
+  • Test samples: 940
+
+ FEATURE SELECTION:
+  • Selection method: SelectKBest (f_classif)
+  • Features selected: 15/25
+  • Top 5 features:
+    1. currentRatio: 6.26
+    2. quickRatio: 1.35
+    3. cashRatio: 8.69
+    4. daysOfSalesOutstanding: 2.09
+    5. netProfitMargin: 1.39
+
+ BUSINESS METRICS:
+  • Risk mapping: {'A': 'High_Risk', 'AA': 'High_Risk', 'AAA': 'High_Risk', 'B': 'Medium_Risk', 'BB': 'Medium_Risk', 'BBB': 'Medium_Risk', 'C': 'Low_Risk', 'CC': 'Low_Risk', 'CCC': 'Low_Risk', 'D': 'Low_Risk'}
+  • Risk-level accuracy: 0.6266
+  • Threshold analysis:
+    Threshold 0.3: Acc 0.383, Coverage 0.428
+    Threshold 0.4: Acc 0.450, Coverage 0.274
+    Threshold 0.5: Acc 0.541, Coverage 0.209
+    Threshold 0.6: Acc 0.561, Coverage 0.148
+    Threshold 0.7: Acc 0.632, Coverage 0.113
+    Threshold 0.8: Acc 0.588, Coverage 0.072
+    Threshold 0.9: Acc 0.281, Coverage 0.034
+
+ CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+           A       0.27      0.33      0.30       134
+          AA       0.27      0.31      0.29       134
+         AAA       0.60      0.78      0.68       134
+           B       0.29      0.21      0.24       135
+          BB       0.31      0.32      0.32       134
+         BBB       0.18      0.11      0.14       134
+         CCC       0.51      0.50      0.50       135
+
+    accuracy                           0.36       940
+   macro avg       0.35      0.36      0.35       940
+weighted avg       0.35      0.36      0.35       940
