@@ -1,6 +1,7 @@
 ENHANCED CORPORATE RATING ANALYSIS - LOGISTIC REGRESSION REPORT
 ======================================================================
 
+<<<<<<< HEAD
 DATASET INFORMATION:
   � Original dataset shape: (2029, 31)
   � Enhanced dataset shape: (2029, 31)
@@ -26,12 +27,40 @@ DATASET INFORMATION:
   � Selection method: SelectKBest (f_classif)
   � Features selected: 15/25
   � Top 5 features:
+=======
+📊 DATASET INFORMATION:
+  • Original dataset shape: (2029, 31)
+  • Enhanced dataset shape: (2029, 31)
+  • Duplicates removed: 0
+  • Missing values handled: 0 → 0
+  • Outliers detected: 1075 (53.0%)
+  • Features after selection: 15
+  • Target classes: 10
+  • Class distribution: {'A': np.int64(398), 'AA': np.int64(89), 'AAA': np.int64(7), 'B': np.int64(302), 'BB': np.int64(490), 'BBB': np.int64(671), 'C': np.int64(0), 'CC': np.int64(0), 'CCC': np.int64(64)}
+
+🤖 MODEL INFORMATION:
+  • Algorithm: Logistic Regression (Enhanced)
+  • Best parameters: {'C': 1000, 'class_weight': 'balanced', 'max_iter': 1000, 'penalty': 'l2', 'solver': 'lbfgs'}
+  • Cross-validation score: 0.3737 ± 0.0117
+  • Test accuracy: 0.3660
+  • Risk-level accuracy: 0.6287
+  • Average confidence: 0.3716
+  • ROC-AUC score: 0.7549
+  • Training samples: 3757
+  • Test samples: 940
+
+🎯 FEATURE SELECTION:
+  • Selection method: SelectKBest (f_classif)
+  • Features selected: 15/25
+  • Top 5 features:
+>>>>>>> bd1732c725b631d383f2df4032858ffff314ed78
     1. currentRatio: 6.26
     2. quickRatio: 1.35
     3. cashRatio: 8.69
     4. daysOfSalesOutstanding: 2.09
     5. netProfitMargin: 1.39
 
+<<<<<<< HEAD
  BUSINESS METRICS:
   � Risk mapping: {'A': 'High_Risk', 'AA': 'High_Risk', 'AAA': 'High_Risk', 'B': 'Medium_Risk', 'BB': 'Medium_Risk', 'BBB': 'Medium_Risk', 'C': 'Low_Risk', 'CC': 'Low_Risk', 'CCC': 'Low_Risk', 'D': 'Low_Risk'}
   � Risk-level accuracy: 0.6266
@@ -58,3 +87,31 @@ DATASET INFORMATION:
     accuracy                           0.36       940
    macro avg       0.35      0.36      0.35       940
 weighted avg       0.35      0.36      0.35       940
+=======
+💼 BUSINESS METRICS:
+  • Risk mapping: {'A': 'High_Risk', 'AA': 'High_Risk', 'AAA': 'High_Risk', 'B': 'Medium_Risk', 'BB': 'Medium_Risk', 'BBB': 'Medium_Risk', 'C': 'Low_Risk', 'CC': 'Low_Risk', 'CCC': 'Low_Risk', 'D': 'Low_Risk'}
+  • Risk-level accuracy: 0.6287
+  • Threshold analysis:
+    Threshold 0.3: Acc 0.383, Coverage 0.417
+    Threshold 0.4: Acc 0.452, Coverage 0.278
+    Threshold 0.5: Acc 0.542, Coverage 0.214
+    Threshold 0.6: Acc 0.557, Coverage 0.149
+    Threshold 0.7: Acc 0.636, Coverage 0.114
+    Threshold 0.8: Acc 0.594, Coverage 0.073
+    Threshold 0.9: Acc 0.273, Coverage 0.035
+
+📈 CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+           A       0.28      0.33      0.30       134
+          AA       0.27      0.31      0.29       134
+         AAA       0.60      0.78      0.68       134
+           B       0.28      0.20      0.23       135
+          BB       0.32      0.34      0.33       134
+         BBB       0.17      0.10      0.13       134
+         CCC       0.52      0.50      0.51       135
+
+    accuracy                           0.37       940
+   macro avg       0.35      0.37      0.35       940
+weighted avg       0.35      0.37      0.35       940
+>>>>>>> bd1732c725b631d383f2df4032858ffff314ed78
