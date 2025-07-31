@@ -1,0 +1,84 @@
+CORPORATE RATING ANALYSIS - COMPREHENSIVE SUMMARY
+======================================================================
+
+PIPELINE STEPS COMPLETED:
+1. Data Cleaning & Imputation: 2029 rows processed
+2. EDA: 26 numerical, 6 categorical features
+3. Outlier Handling: 4406 outliers capped
+4. Feature Engineering: 1 features created
+5. Encoding: Categorical and target variables encoded
+6. Stratified Dataset Split: 80/20 train/test split
+7. Feature Scaling: 31 features scaled
+8. Improved SMOTE: Applied
+9. Model Training: Improved Decision Tree with class weights
+
+CLASS DISTRIBUTION:
+Original Training Distribution:
+  BBB: 536 samples (33.1%)
+  BB: 392 samples (24.2%)
+  A: 318 samples (19.6%)
+  B: 241 samples (14.9%)
+  AA: 71 samples (4.4%)
+  CCC: 51 samples (3.2%)
+  AAA: 5 samples (0.3%)
+  CC: 4 samples (0.2%)
+  C: 1 samples (0.1%)
+
+After SMOTE:
+  CCC: 536 samples (12.5%)
+  AAA: 536 samples (12.5%)
+  A: 536 samples (12.5%)
+  AA: 536 samples (12.5%)
+  B: 536 samples (12.5%)
+  BB: 536 samples (12.5%)
+  BBB: 536 samples (12.5%)
+  CC: 536 samples (12.5%)
+  C: 1 samples (0.0%)
+
+Imbalance Ratio: 0.002
+
+COMPREHENSIVE RESULTS COMPARISON:
+Baseline Model (Before SMOTE):
+  Test Accuracy: 0.307 (30.7%)
+  Macro F1-Score: 0.171
+  Training Samples: 1619
+
+SMOTE Model (After SMOTE):
+  Test Accuracy: 0.398 (39.8%)
+  Macro F1-Score: 0.220
+  Training Samples: 4289
+
+FINAL MODEL (SMOTE):
+  Test Accuracy: 0.398 (39.8%)
+
+IMPROVEMENT ANALYSIS:
+  Accuracy Change: +0.090 (+29.4%)
+  F1-Score Change: +0.049 (+28.8%)
+  Result: SMOTE improved performance
+
+DETAILED METRICS:
+Baseline Model:
+  A: P=0.364, R=0.150, F1=0.212
+  AA: P=0.125, R=0.333, F1=0.182
+  AAA: P=0.083, R=0.500, F1=0.143
+  B: P=0.253, R=0.344, F1=0.292
+  BB: P=0.250, R=0.122, F1=0.164
+  BBB: P=0.472, R=0.504, F1=0.487
+  C: P=0.000, R=0.000, F1=0.000
+  CC: P=0.000, R=0.000, F1=0.000
+  CCC: P=0.150, R=0.462, F1=0.226
+  D: P=0.000, R=0.000, F1=0.000
+
+SMOTE Model:
+  A: P=0.471, R=0.500, F1=0.485
+  AA: P=0.290, R=0.500, F1=0.367
+  AAA: P=0.000, R=0.000, F1=0.000
+  B: P=0.319, R=0.377, F1=0.346
+  BB: P=0.397, R=0.296, F1=0.339
+  BBB: P=0.548, R=0.422, F1=0.477
+  C: P=0.000, R=0.000, F1=0.000
+  CC: P=0.000, R=0.000, F1=0.000
+  CCC: P=0.122, R=0.385, F1=0.185
+  D: P=0.000, R=0.000, F1=0.000
+
+TARGET CLASSES: 10 (A, AA, AAA, B, BB, BBB, C, CC, CCC, D)
