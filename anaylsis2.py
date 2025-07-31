@@ -269,7 +269,7 @@ print("=" * 60)
 # Define comprehensive hyperparameter grid for Logistic Regression
 param_grid = {
     'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
-    'penalty': ['l2', 'none'],
+    'penalty': ['l2'],
     'solver': ['lbfgs'],
     'max_iter': [1000, 2000, 5000],
     'class_weight': [None, 'balanced']  # Handle class imbalance
@@ -593,17 +593,17 @@ with open(report_file, 'w') as f:
     f.write("ENHANCED CORPORATE RATING ANALYSIS - LOGISTIC REGRESSION REPORT\n")
     f.write("=" * 70 + "\n\n")
     
-    f.write(f"📊 DATASET INFORMATION:\n")
+    f.write(f"DATASET INFORMATION:\n")
     f.write(f"  • Original dataset shape: {df.shape}\n")
     f.write(f"  • Enhanced dataset shape: {enhanced_df.shape}\n")
     f.write(f"  • Duplicates removed: {duplicates_count}\n")
-    f.write(f"  • Missing values handled: {missing_before} → {missing_after}\n")
+    f.write(f"  • Missing values handled: {missing_before}  {missing_after}\n")
     f.write(f"  • Outliers detected: {len(outlier_indices)} ({outlier_percentage:.1f}%)\n")
     f.write(f"  • Features after selection: {len(selected_features)}\n")
     f.write(f"  • Target classes: {len(le.classes_)}\n")
     f.write(f"  • Class distribution: {dict(zip(le.classes_, np.bincount(y_encoded)))}\n\n")
     
-    f.write(f"🤖 MODEL INFORMATION:\n")
+    f.write(f" MODEL INFORMATION:\n")
     f.write(f"  • Algorithm: Logistic Regression (Enhanced)\n")
     f.write(f"  • Best parameters: {grid_search.best_params_}\n")
     f.write(f"  • Cross-validation score: {grid_search.best_score_:.4f} ± {cv_scores.std()*2:.4f}\n")
@@ -615,7 +615,7 @@ with open(report_file, 'w') as f:
     f.write(f"  • Training samples: {X_train.shape[0]}\n")
     f.write(f"  • Test samples: {X_test.shape[0]}\n\n")
     
-    f.write(f"🎯 FEATURE SELECTION:\n")
+    f.write(f" FEATURE SELECTION:\n")
     f.write(f"  • Selection method: SelectKBest (f_classif)\n")
     f.write(f"  • Features selected: {len(selected_features)}/{len(numeric_features)}\n")
     f.write(f"  • Top 5 features:\n")
@@ -623,7 +623,7 @@ with open(report_file, 'w') as f:
         f.write(f"    {i+1}. {feature}: {score:.2f}\n")
     f.write("\n")
     
-    f.write(f"💼 BUSINESS METRICS:\n")
+    f.write(f" BUSINESS METRICS:\n")
     f.write(f"  • Risk mapping: {risk_mapping}\n")
     f.write(f"  • Risk-level accuracy: {risk_accuracy:.4f}\n")
     
@@ -633,24 +633,24 @@ with open(report_file, 'w') as f:
             f.write(f"    Threshold {row['threshold']:.1f}: Acc {row['accuracy']:.3f}, Coverage {row['coverage']:.3f}\n")
     f.write("\n")
     
-    f.write(f"📈 CLASSIFICATION REPORT:\n")
+    f.write(f" CLASSIFICATION REPORT:\n")
     f.write(classification_rep)
 
-print(f"✅ Comprehensive analysis report saved: {report_file}")
+print(f" Comprehensive analysis report saved: {report_file}")
 
 # Save threshold analysis if available
 if not threshold_results.empty:
     threshold_file = "confidence_threshold_analysis.csv"
     threshold_results.to_csv(threshold_file, index=False)
-    print(f"✅ Threshold analysis saved: {threshold_file}")
+    print(f" Threshold analysis saved: {threshold_file}")
 
 # =============================================================================
 # FINAL ENHANCED SUMMARY
 # =============================================================================
 
-print("\n" + "🎉 ENHANCED ANALYSIS COMPLETE!")
+print("\n" + " ENHANCED ANALYSIS COMPLETE!")
 print("=" * 60)
-print("📊 COMPREHENSIVE SUMMARY:")
+print(" COMPREHENSIVE SUMMARY:")
 print(f"  • Data processed: {enhanced_df.shape[0]} records, {len(selected_features)} selected features")
 print(f"  • Missing values handled: {missing_before} → {missing_after}")
 print(f"  • Outliers detected and handled: {len(outlier_indices)} ({outlier_percentage:.1f}%)")
@@ -666,9 +666,9 @@ print(f"  • Rare ratings removed: {len(rare_ratings)} classes")
 print(f"  • Class balancing: SMOTE applied")
 print(f"  • Business risk mapping: {len(risk_mapping)} risk levels")
 
-print(f"\n🎯 Your enhanced corporate rating prediction system is ready!")
+print(f"\n Your enhanced corporate rating prediction system is ready!")
 print("Check the generated files for detailed results and comprehensive analysis.")
-print(f"\n✅ Files created:")
+print(f"\n Files created:")
 print(f"  • {output_file} - Enhanced dataset")
 print(f"  • {predictions_file} - Enhanced model predictions")
 print(f"  • {feature_importance_file} - Feature importance analysis")
@@ -676,7 +676,7 @@ print(f"  • {report_file} - Comprehensive analysis report")
 if not threshold_results.empty:
     print(f"  • {threshold_file} - Confidence threshold analysis")
 
-print(f"\n🚀 KEY IMPROVEMENTS ADDED:")
+print(f"\n KEY IMPROVEMENTS ADDED:")
 print(f"  ✓ Advanced outlier detection and handling")
 print(f"  ✓ Intelligent feature selection (SelectKBest)")
 print(f"  ✓ Comprehensive cross-validation analysis")
@@ -689,7 +689,7 @@ print(f"  ✓ Prediction error analysis")
 print(f"  ✓ Data quality validation")
 print(f"  ✓ Enhanced hyperparameter tuning with class weights")
 
-print(f"\n💡 NEXT STEPS RECOMMENDATIONS:")
+print(f"\n NEXT STEPS RECOMMENDATIONS:")
 print(f"  • Review feature importance to understand key drivers")
 print(f"  • Analyze confidence thresholds for business decisions")
 print(f"  • Consider the risk-level accuracy for business applications")
