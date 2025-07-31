@@ -1,5 +1,0 @@
-CORPORATE RATING ANALYSIS - SUMMARY REPORT
-==================================================
-
-  • Original dataset shape: (2029, 31)
-  • Duplicates removed: 0
